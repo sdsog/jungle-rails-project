@@ -3,8 +3,20 @@
 Rails.application.routes.draw do
   root to: 'products#index'
 
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
   resources :products, only: %i[index show]
+
   resources :categories, only: [:show]
+
+  # These routes will be for signup. The first renders a form in the browser, the second will
+  # receive the form and create a user in our database using the data given to us by the user.
 
   resource :cart, only: [:show] do
     post   :add_item
