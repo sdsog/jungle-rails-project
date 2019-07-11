@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your order, <%= @user %> </h1>
+    <p>
+      <% @order.line_items.each do |line_item| %>
+        <%= render 'item', product_id: line_item.product_id, line_total: line_item.total_price %>
+      <% end %>
+       Total: <%= humanized_money_with_symbol @order.total %>
+    </p>
+  </body>
+</html>
