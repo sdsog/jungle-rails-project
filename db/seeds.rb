@@ -31,6 +31,17 @@ cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
+## REVIEWS
+
+puts 'Putting Reviews in...'
+
+Review.destroy_all
+
+Review.create(product_id: 1, user_id: 1, description: 'Great product. Nicely done!.', rating: 4)
+Review.create(product_id: 1, user_id: 1, description: "You're amazing and so is this product. Buying them for all my friends.", rating: 3)
+Review.create(product_id: 4, user_id: 2, description: 'OMG SOOOO GOOD. I WANT MORE', rating: 3)
+Review.create(product_id: 3, user_id: 1, description: 'This suuuuuuuucks. Never wasting my money on this crap again.', rating: 5)
+
 ## PRODUCTS
 
 puts 'Re-creating Products ...'
