@@ -2,7 +2,6 @@
 
 <% if current_user %>
 
-
  <dl class="dl-horizontal">
    <dt></dt>
   <dd><h5><span style="color:blue"><%= current_user.name.titleize %></span>, did you like this product? 🤔Leave your review and help others!<h5></dd>
@@ -20,7 +19,7 @@
     <button type="button" class="btn btn-primary">4 <%= f.radio_button :rating, [4] %></button>
     <button type="button" class="btn btn-primary">5 <%= f.radio_button :rating, [5] %></button>
   </div></div>
-   <button type="submit" class="btn pull-right d-inline-block"><%= f.submit "Submit Review" %></button>
+   <%= f.submit "Submit Review", class: "btn-primary btn d-inline-block pull-right" %>
   </dd>
   
  </dl>
