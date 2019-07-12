@@ -1,0 +1,31 @@
+
+
+<% if current_user %>
+
+
+ <dl class="dl-horizontal">
+   <dt></dt>
+  <dd><h5><span style="color:blue"><%= current_user.name.titleize %></span>, did you like this product? 🤔Leave your review and help others!<h5></dd>
+    <%= form_for :review, url: "#{@product.id}/reviews" do |f| %>
+  <dt>Leave a review</dt>
+  <dd><%= form_for :review, url: "#{@product.id}/reviews" do |f| %>  <textarea class="form-control" rows="3" <%= f.text_area :description %><br/></textarea>
+  
+  <dt>Rating</dt>
+  <dd>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-primary">1 <%= f.radio_button :rating, [1] %></button>
+    <button type="button" class="btn btn-primary">2 <%= f.radio_button :rating, [2] %></button>
+    <button type="button" class="btn btn-primary">3 <%= f.radio_button :rating, [3] %></button>
+    <button type="button" class="btn btn-primary">4 <%= f.radio_button :rating, [4] %></button>
+    <button type="button" class="btn btn-primary">5 <%= f.radio_button :rating, [5] %></button>
+  </div></div>
+   <button type="submit" class="btn pull-right d-inline-block"><%= f.submit "Submit Review" %></button>
+  </dd>
+  
+ </dl>
+  <% end %>
+
+   <% end %>
+<% else %>
+<% end %>

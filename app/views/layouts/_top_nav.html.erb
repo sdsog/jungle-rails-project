@@ -47,7 +47,7 @@
 
         <li class="navbar-text signed-in-as">
         <% if current_user %>
-        Hello <%= current_user.name %>
+        Hello <span style="font-weight:bold; color:blue;"><%= current_user.name.titleize %></span>
         </li>
         <li><%= link_to "Logout", '/logout' %></li>
         <% else %>
