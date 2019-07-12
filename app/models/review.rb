@@ -1,5 +1,6 @@
-class Review < ActiveRecord::Base
+# frozen_string_literal: true
 
+class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :product
 
@@ -7,5 +8,4 @@ class Review < ActiveRecord::Base
   validates :user_id, presence: true
   validates :description, presence: true
   validates :rating, numericality: true
-
 end

@@ -23,20 +23,30 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
+            <div class="reviews">
+    <h3 class="page-header"> Reviews: </h3>
+    <br/>
+ 
+ <dl class="dl-horizontal">
+   <% @reviews.each do |review| %>
+
+  <dt>Name</dt>
+  <dd> <%= review.user_id  %> </dd>
+  <dt>Rating</dt>
+  <dd> <%= review.rating  %> </dd>
+  <dt>Created at:</dt>
+  <dd> <%= review.created_at %> </dd>
+  <dt>Product Review:</dt>
+  <dd> Description: <%= review.description  %> </dd>
+  <br/> 
+  <% end %></dd>
+
+ </dl>
+    
+    </div>
       </div>
     </div>
-  
-    <h3 class="page-header"> Reviews: </h3>
-    <br/>
 
-    <h3 class="page-header"> Reviews: </h3>
-    <br/>
-    <% @reviews.each do |review| %>
-     <p> Name: <%= review.user_id  %> </p>
-     <p> Created at: <%= review.created_at %> </p>
-     <p> Rating: <%= review.rating  %> </p>
-     <p> Description: <%= review.description  %> </p>
-    <% end %>
 
   </article>
 

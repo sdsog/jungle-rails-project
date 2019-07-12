@@ -25,7 +25,9 @@ end
 
 ## CATEGORIES
 
+puts ''
 puts 'Finding or Creating Categories ...'
+puts ''
 
 cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
@@ -35,16 +37,19 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 puts 'Putting Reviews in ...'
 
+puts ''
+
 Review.destroy_all
 
-Review.create(product_id: 30, user_id: 1, description: 'Great product. Nicely done!.', rating: 4)
-Review.create(product_id: 30, user_id: 1, description: "You're amazing and so is this product. Buying them for all my friends.", rating: 3)
-Review.create(product_id: 30, user_id: 2, description: 'OMG SOOOO GOOD. I WANT MORE', rating: 3)
-Review.create(product_id: 30, user_id: 1, description: 'This suuuuuuuucks. Never wasting my money on this crap again.', rating: 5)
+Review.create(product_id: 12, user_id: 1, description: 'Great product. Nicely done!.', rating: 4)
+Review.create(product_id: 12, user_id: 1, description: "You're amazing and so is this product. Buying them for all my friends.", rating: 3)
+Review.create(product_id: 12, user_id: 2, description: 'OMG SOOOO GOOD. I WANT MORE', rating: 3)
+Review.create(product_id: 21, user_id: 1, description: 'This suuuuuuuucks. Never wasting my money on this crap again.', rating: 5)
 
 ## PRODUCTS
 
 puts 'Re-creating Products ...'
+puts ''
 
 Product.destroy_all
 
