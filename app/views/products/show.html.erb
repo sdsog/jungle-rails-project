@@ -25,11 +25,17 @@
         </dl>
       </div>
     </div>
-        <%= render 'review' %>
+  
+    <h3 class="page-header"> Reviews: </h3>
+    <br/>
+
     <h3 class="page-header"> Reviews: </h3>
     <br/>
     <% @reviews.each do |review| %>
-      <%= render 'rating', rating: review.rating, description: review.description, user: review.user_id, user: review.user.name, created_at: review.created_at  %>
+     <p> Name: <%= review.user_id  %> </p>
+     <p> Created at: <%= review.created_at %> </p>
+     <p> Rating: <%= review.rating  %> </p>
+     <p> Description: <%= review.description  %> </p>
     <% end %>
 
   </article>
