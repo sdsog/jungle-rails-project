@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
 
   def order_confirmation(user, order)
     email = user.email
-    @name = user.name
+    @user = user.name
     @order = order
     @orderid = order.id
     mail(to: email, subject: "Order ##{@orderid} has been received")
