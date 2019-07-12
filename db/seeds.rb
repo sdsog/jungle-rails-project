@@ -33,7 +33,7 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 ## REVIEWS
 
-puts 'Putting Reviews in...'
+puts 'Putting Reviews in ...'
 
 Review.destroy_all
 
