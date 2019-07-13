@@ -1,7 +1,16 @@
-# Jungle
+# Jungle Project (Lighthouse Labs)
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+Project was completed as a requirement of Lighthouse Lab's Full Stack Web Development Bootcamp. Jungle is a mini e-commerce app built with Rails 4.2 for the purposes of teaching Rails by example. The project's intention was to act as a "real-world" simulation, specifically: learning a new language, ecosystem and framework on the fly. With less than a week to learn Ruby, and a two days to learn Rails after inheriting an existing code base and implementing a variety of new features.
 
+## Features Added
+
+- Admin Categories: allows admin to add and delete new categories
+- Sold Out Badge: if product quantity is zero, displays badge and disables "add-to-cart" button
+- User Authentification: allows user to create account, logout and sign-up
+- Order Detail Page: if cart is empty, instructs user to keep shopping
+- Email Receipt: after order, email with product details is sent with order details to user's email
+- Admin Security: user must enter HTTP auth login/password to access admin pages
+- Product Rating: allows registered users to rate and review products
 
 ## Setup
 
@@ -23,6 +32,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+- Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+- PostgreSQL 9.x
+- Stripe

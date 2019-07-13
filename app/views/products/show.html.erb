@@ -38,19 +38,27 @@
 
  <dl class="dl-horizontal">
   <dt></dt>
-  <dd><h4 class="page-header"> Reviews: </h4></dd>
+  <dd><h4 class="page-header"> Product reviews </dd>
    <% @reviews.each do |review| %>
   <dt>Name</dt>
   <dd> <%= review.user_id %> </dd>
   <dt>Rating</dt>
-  <dd> <%= review.rating * 10 %> 
+  <dd> <%= review.rating %> / 5
   
   </dd>
   <dt>Created at:</dt>
   <dd> <%= review.created_at.to_formatted_s(:long_ordinal)   %> </dd>
   <dt>Product Review:</dt>
   <dd><%= review.description  %> </dd>
-  <br/> 
+
+
+  <% if current_user && current_user.id == review.user_id %>
+  
+
+ <dd>  <br><%= link_to fa_icon('trash'), product_review_path(@product, review), class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?" } %><dd>
+
+
+  <% end %>
   <% end %>
 
  </dl>

@@ -33,6 +33,14 @@ cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
+puts 'Putting a user in ...'
+
+puts ''
+
+User.destroy_all
+
+User.create(name: 'Steve', email: 'test@test.com', password_digest: '123')
+
 ## REVIEWS
 
 puts 'Putting Reviews in ...'
