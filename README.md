@@ -12,6 +12,11 @@ Project was completed as a requirement of Lighthouse Lab's Full Stack Web Develo
 - Admin Security: user must enter HTTP auth login/password to access admin pages
 - Product Rating: allows registered users to rate and review products
 
+## Screenshots
+
+![Homepage](https://github.com/sdsog/jungle-rails-project/blob/master/screenshots/home-page.png "Homepage")
+![Product Detail Page](https://github.com/sdsog/jungle-rails-project/blob/master/screenshots/product-detail-page.png "Product Detail Page")
+
 ## Setup
 
 1. Fork & Clone
