@@ -4,10 +4,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'Validations' do
-    it 'user can be created' do
+    it 'new user can be created' do
       user = User.create(
         name: 'name',
-        email: 'test@test.com',
+        email: 'test1@test.com',
         password: 'password',
         password_confirmation: 'password'
       )
@@ -66,6 +66,52 @@ RSpec.describe User, type: :model do
         password_confirmation: '12'
       )
       expect(user).to_not be_valid
+    end
+  end
+
+  describe '.credentials_checker' do
+    it 'expects user to be able to login with correct credentials' do
+      user = User.create(
+        name: 'name',
+        email: 'test1@test.com',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+      valid_user = User.credentials_checker('test1@test.com', 'password')
+      expect(valid_user).to eq(user)
+    end
+
+    it 'should not authenticate if password and email are valid' do
+      user = User.create(
+        name: 'name',
+        email: 'test1@test.com',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+      invalid_user = User.credentials_checker('fail@test.com', 'password')
+      expect(invalid_user).to_not eq(user)
+    end
+
+    it 'should not authenticate if email contains capitals' do
+      user = User.create(
+        name: 'name',
+        email: 'test1@test.com',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+      valid_user = User.credentials_checker('TEST1@test.com', 'password')
+      expect(valid_user).to eq(user)
+    end
+
+    it 'should authenticate if email contains spaces' do
+      user = User.create(
+        name: 'name',
+        email: 'test1@test.com',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+      valid_user = User.credentials_checker(' test1@test.com   ', 'password')
+      expect(valid_user).to eq(user)
     end
   end
 end
